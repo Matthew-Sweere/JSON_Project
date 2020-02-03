@@ -35,6 +35,7 @@ for eq in list_of_eqs:
 
 print(mags[:10])
 
+
 from plotly.graph_objs import Scattergeo, Layout
 from plotly import offline
 
@@ -49,6 +50,10 @@ data = [{
     'lat': lats,
     'marker':{
         'size':[5*mag for mag in mags],
+        'color': mags,
+        'colorscale': 'Viridis',
+        'reversescale': True,
+        'colorbar': {'title': 'Magnitude'}
     },
 }]
 
