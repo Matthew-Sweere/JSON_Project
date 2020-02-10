@@ -1,7 +1,7 @@
 import csv
 
 # Load files
-with open('MODIS_C6_Australia_NewZealand_MCD14DL_NRT_2019331.txt') as csv_file:
+with open('MODIS_C6_Australia_NewZealand_MCD14DL_NRT_2020026.txt') as csv_file:
     csv_reader = csv.reader(csv_file, delimiter=',')
     next(csv_reader, None) #skip the headers
 
@@ -16,7 +16,7 @@ with open('MODIS_C6_Australia_NewZealand_MCD14DL_NRT_2019331.txt') as csv_file:
         lons.append(lon)
         brights.append(bright)
 
-print(lons[:10])
+print(brights[:10])
 
 
 from plotly.graph_objs import Scattergeo, Layout
@@ -40,9 +40,9 @@ data = [{
     },
 }]
 
-my_layout = Layout(title = "Australian Fires - November 2019")
+my_layout = Layout(title = "Australian Fires - January 2020")
 
 fig = {'data':data, 'layout':my_layout}
 
-offline.plot(fig, filename = 'Australian_Fires_November_2019.html')
+offline.plot(fig, filename = 'Australian_Fires_January_2020.html')
 
